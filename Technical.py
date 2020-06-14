@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import talib as ta
 
-df = pd.read_csv('MES.csv')
+df = pd.read_csv('BA.csv')
 
 df['Date'] = pd.to_datetime(df['Date'])
 
@@ -41,7 +41,7 @@ df["WILLR"] = ta.WILLR(df['High'], df['Low'], df['Close'], timeperiod=14)
 MA = df.iloc[:,6]
 
 # Up trend is 1, No trend is 0, and Down trend is -1
-df['Trend'] = MA.rolling('5d').apply(lambda x: np.sign(x[-1] - x[0]))
+df['Trend'] = MA.rolling('5d').apply(lambda x: np.sign(x[-1] - x[0]), raw=False)
 
 df.tail()
 #If close > MA25 and MA25 is rising for last 5 days then 1 (Uptrend)
@@ -86,7 +86,7 @@ df2 = df2.fillna(0)
 
 target_column = ['Trade_Signal'] 
 predictors = list(set(list(df2.columns))-set(target_column))
-#line 3 here fufills the data normalization of Step 5.4
+#line 3 here fufills the data normalization
 df2[predictors] = (df2[predictors] - df2[predictors].min())/(df2[predictors].max() - df2[predictors].min())
 
 train = df2.iloc[:1000, :]
