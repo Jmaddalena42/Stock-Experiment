@@ -13,7 +13,7 @@ talib
 
 HOW TO USE:
 
-You can drag and drop an excel file with open, close, high, low, and dates of a specific stock into the same folder as Technical.py . The example I used is for Boeing and I got the data from yahoo/finance. Then, inside Technical.py change BA in df = pd.read_csv('BA.csv') into whatever your csv is with your stock data.
+You can drag and drop an excel file with date, open, high, low, and close of a specific stock into the same folder as Technical.py . The example I used is for Boeing and I got the data from yahoo/finance. Then, inside Technical.py change BA in df = pd.read_csv('BA.csv') into whatever your csv is with your stock data.
 
 You will also need to change
 
@@ -33,4 +33,6 @@ or
 
 to see if SAM is running properly in your terminal. If you're getting numbers and no errors then it's working.
 
-The Jupyter notebook file imports SAM and will display with matplotlib how well the network did at predicting the stock prices compared to the actual prices over the test period.
+Currently SAM only produces the weights wich need to be multiplied by the corresponding normalized indicator values on the test data to produce trading signals. However, the biggest hurtle is done which is the program to produce the weights.
+
+The Jupyter notebook file will import SAM and will display with matplotlib how well the network did at predicting the stock prices compared to the actual prices over the test period.
