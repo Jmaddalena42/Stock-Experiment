@@ -33,6 +33,6 @@ or
 
 to see if SAM is running properly in your terminal. If you're getting numbers and no errors then it's working.
 
-Currently SAM only produces the weights wich need to be multiplied by the corresponding normalized indicator values on the test data to produce trading signals. However, the biggest hurtle is done which is the program to produce the weights.
+Currently SAM only produces the weights which need to be multiplied by the corresponding normalized indicator values on the test data to produce trading signals. However, the biggest hurtle is done which is the program to produce the weights.
 
 The Jupyter notebook file will import SAM and will display with matplotlib how well the network did at predicting the stock prices compared to the actual prices over the test period.
